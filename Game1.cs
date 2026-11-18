@@ -11,6 +11,10 @@ namespace Monogame_2___Scaling_and_Text
         Rectangle window;
         Texture2D circleTexture;
         Texture2D rectangleTexture;
+        Rectangle rect1;
+        Rectangle magentaRect;
+        Rectangle circleRect;
+        SpriteFont textFont;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -24,7 +28,9 @@ namespace Monogame_2___Scaling_and_Text
             _graphics.PreferredBackBufferWidth = window.Width;
             _graphics.PreferredBackBufferHeight = window.Height;
             _graphics.ApplyChanges();
-
+            rect1 = new Rectangle(50, 50, 100, 100);
+            magentaRect = new Rectangle(420, 61, 67, 69);
+            circleRect = new Rectangle(200, 67, 61, 420);
             // TODO: Add your initialization logic here
 
             base.Initialize();
@@ -34,8 +40,9 @@ namespace Monogame_2___Scaling_and_Text
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            circleTexture = Content.Load<Texture2D>("circle.png");
-            rectangleTexture = Content.Load<Texture2D>("rectangle.png");
+            circleTexture = Content.Load<Texture2D>("circle");
+            rectangleTexture = Content.Load<Texture2D>("rectangle");
+            textFont = Content.Load<SpriteFont>("textFont");
             // TODO: use this.Content to load your game content here
         }
 
@@ -55,9 +62,10 @@ namespace Monogame_2___Scaling_and_Text
 
             _spriteBatch.Begin();
 
-            _spriteBatch.Draw(rectangleTexture, new Vector2(10, 10), Color.White);
-
-
+            _spriteBatch.Draw(rectangleTexture, rect1, Color.White);
+            _spriteBatch.Draw(rectangleTexture, magentaRect, Color.Magenta);
+            _spriteBatch.Draw(circleTexture, circleRect, Color.White);
+            _spriteBatch.DrawString(textFont, "Yo, Gurt!", new Vector2(100, 100), Color.Goldenrod);
             _spriteBatch.End();
 
             // TODO: Add your drawing code here

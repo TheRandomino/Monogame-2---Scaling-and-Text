@@ -39,3 +39,11 @@
 /processorParam:Version=3.8.6.1
 /build:rectangle.png
 
+#begin textFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/processorParam:Version=3.8.6.1
+/build:textFont.spritefont
+
